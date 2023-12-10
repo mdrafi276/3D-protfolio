@@ -47,8 +47,8 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I'm a skilled software developer with experience in JavaScript, and
-        expertise in frameworks like React, express.js,  Node.js. tailwind.css  I'm a quick learner and
+        I'm a skilled MERN-Stack web developer with experience in JavaScript, and
+        expertise in frameworks like React, express.js, gsap, locomotivre.js,next.js,Material.UI,  Node.js. tailwind.css  I'm a quick learner and
         collaborate closely with clients to create efficient, scalable, and
         user-friendly solutions that solve real-world problems. Let's work
         together to bring your ideas to life!
