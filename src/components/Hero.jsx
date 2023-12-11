@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
+
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
@@ -44,13 +45,17 @@ const Hero = () => {
           </div>
         </a>
       </div>
-      <div className="absolute z-20  lg:-mt-20 ">
-        <button
-          href="https://web.facebook.com/friends/requests/?profile_id=100010661012136"
-          className=" py-2 px-6 bg-transparent border-2 rounded-lg hover:scale-105 ml-8 text-sm "
-        >
+      <div className="absolute z-20 ml-8 md::ml-8 text-center  md:-mt-20 ">
+        <button className="c-button c-button--gooey  text-sm  rounded-2xl">
+          {" "}
           Download Resume
+          <div className="c-button__blobs  rounded-2xl">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </button>
+       
       </div>
     </section>
   );
