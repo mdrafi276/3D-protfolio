@@ -43,7 +43,7 @@ const Navbar = () => {
           }}
         >
           <img
-            src="https://i.ibb.co/PmPWh0t/p-4-removebg-preview.png"
+            src="https://i.ibb.co/6BwSS3X/p-5-removebg-preview.png"
             alt="logo"
             className="w-9 h-9 object-contain"
           />
