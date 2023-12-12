@@ -6,9 +6,54 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import Swal from "sweetalert2";
+
+
+
 
 const Contact = () => {
-  const formRef = useRef();
+
+  const [success, setSuccess] = useState(null);
+  const ref = useRef();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7mepr68",
+        "template_vg1llp4",
+        ref.current,
+        "x_CkO3iVwm3Q2MAHz"
+      )
+      .then(
+        (result) => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Thank you. I will get back to you as soon as possible",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+                  
+          console.log(result.text);
+          e.target.reset();
+          setSuccess(true);
+          setLoading(false);
+          
+
+          //         setForm({
+          //           name: "",
+          //           email: "",
+          //           message: "",
+          //         });
+        },
+        (error) => {
+          console.log(error.text);
+          setSuccess(false);
+        }
+      );
+  };
+  // const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -27,55 +72,56 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  // // const handleSubmit = (e) => {
+  // //   e.preventDefault();
+  // //   setLoading(true);
 
-    emailjs
-      .send(
-        "template_vg1llp4",
-        "service_7mepr68",
-        {
-          from_name: form.name,
-          to_name: "name",
-          from_email: form.email,
-          to_email: "mdrafi37473@gmail.com",
-          message: form.message,
-        },
-        "x_CkO3iVwm3Q2MAHz"
-      )
-      // emailjs
-      //   .send(
-      //     import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-      //     import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-      //     {
-      //       from_name: form.name,
-      //       to_name: "JavaScript Mastery",
-      //       from_email: form.email,
-      //       to_email: "sujata@jsmastery.pro",
-      //       message: form.message,
-      //     },
-      //     import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      //   )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+  // //   emailjs
+  // //     .send(
+  // //       "template_vg1llp4",
+  // //       "service_7mepr68",
+  // //       formRef.current,
+  // //       // {
+  // //       //   from_name: form.name,
+  // //       //   to_name: "name",
+  // //       //   from_email: form.email,
+  // //       //   to_email: "mdrafi37473@gmail.com",
+  // //       //   message: form.message,
+  // //       // },
+  // //       "x_CkO3iVwm3Q2MAHz"
+  // //     )
+  // //     // emailjs
+  // //     //   .send(
+  // //     //     import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+  // //     //     import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+  // //     //     {
+  // //     //       from_name: form.name,
+  // //     //       to_name: "JavaScript Mastery",
+  // //     //       from_email: form.email,
+  // //     //       to_email: "sujata@jsmastery.pro",
+  // //     //       message: form.message,
+  // //     //     },
+  // //     //     import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+  // //     //   )
+  // //     .then(
+  // //       () => {
+  // //         setLoading(false);
+  // //         alert("Thank you. I will get back to you as soon as possible.");
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+  // //         setForm({
+  // //           name: "",
+  // //           email: "",
+  // //           message: "",
+  // //         });
+  // //       },
+  // //       (error) => {
+  // //         setLoading(false);
+  // //         console.error(error);
 
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
-  };
+  // //         alert("Ahh, something went wrong. Please try again.");
+  // //       }
+  // //     );
+  // };
 
   return (
     <div
@@ -89,7 +135,7 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
-          ref={formRef}
+          ref={ref}
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
         >
@@ -98,7 +144,7 @@ const Contact = () => {
             <input
               type='text'
               name='name'
-              value={form.name}
+             
               onChange={handleChange}
               placeholder="What's your good name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -109,7 +155,7 @@ const Contact = () => {
             <input
               type='email'
               name='email'
-              value={form.email}
+           
               onChange={handleChange}
               placeholder="Enter your E-mail address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
@@ -120,7 +166,7 @@ const Contact = () => {
             <textarea
               rows={7}
               name='message'
-              value={form.message}
+            
               onChange={handleChange}
               placeholder='What you want to say?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'

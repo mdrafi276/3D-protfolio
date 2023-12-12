@@ -2,11 +2,18 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-
+import resume from '/assignment2.pdf'
 
 const Hero = () => {
+const cursor = document.querySelector("#cursor");
+const cursor2 = document.querySelector("#cursor2");
+document.addEventListener("mousemove", function(e){
+  cursor.style.cssText = cursor2.style.cssText = "left:" + e.clientX + "px; top:" + e.clientY + "px;"; + "px;";
+})
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className={`relative contant w-full h-screen mx-auto`}>
+      <div id="cursor"></div>
+      <div id="cursor2"></div>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -46,16 +53,19 @@ const Hero = () => {
         </a>
       </div>
       <div className="absolute z-20 ml-8 md::ml-8 text-center  md:-mt-20 ">
-        <button className="c-button c-button--gooey  text-sm  rounded-2xl">
-          {" "}
-          Download Resume
-          <div className="c-button__blobs  rounded-2xl">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </button>
-       
+        <a href={resume}
+        download="Rafi vaiyer Resume"
+        >
+          <button className="c-button c-button--gooey  text-sm  rounded-2xl">
+            {" "}
+            Download Resume
+            <div className="c-button__blobs  rounded-xl">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </button>
+        </a>
       </div>
     </section>
   );
