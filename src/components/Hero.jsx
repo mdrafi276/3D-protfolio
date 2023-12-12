@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import resume from '/assignment2.pdf'
+import resume from '/resume.pdf'
 
 const Hero = () => {
 const cursor = document.querySelector("#cursor");
