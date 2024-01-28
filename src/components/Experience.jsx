@@ -19,7 +19,7 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <h1 id="skill" className="md:text-4xl font-bold  text-center text-xl"> Technologies that I know </h1>
+      <h1 id="skill" className="md:text-4xl font-bold  text-center h-one text-xl"> Technologies that I know </h1>
     </>
   );
 };

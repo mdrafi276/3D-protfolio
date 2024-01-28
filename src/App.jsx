@@ -2,26 +2,31 @@ import { BrowserRouter } from "react-router-dom";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 import Footer from "./components/Footer";
+import MobileBanner from "./components/Banner/MobileBanner";
 
 const App = () => {
 
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-          <Navbar />
+      <Navbar />
+      <div className="relative z-0 bg-primary selection:bg-black selection:text-red-600">
+        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Hero />
+          <MobileBanner />
         </div>
+
         <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className='relative z-0'>
+
+        <div className="relative z-0">
+          <Experience />
+          <Tech />
+          <Works />
+          <Feedbacks />
           <Contact />
           <StarsCanvas />
         </div>
-        <Footer/>
+        <Footer />
+        {/* <StarsCanvas /> */}
       </div>
     </BrowserRouter>
   );

@@ -43,9 +43,9 @@ const Navbar = () => {
           }}
         >
           <img
-            src="https://i.ibb.co/6BwSS3X/p-5-removebg-preview.png"
+            src="https://i.ibb.co/ckRBrR4/google-pixal-7fds1.jpg"
             alt="logo"
-            className="w-9 h-9 object-contain"
+            className="w-9 h-9 object-contain rounded-full"
           />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
             Rafi &nbsp;
