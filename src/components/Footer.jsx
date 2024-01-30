@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
       <div>
-        <div className="  bg-[#151030] p-10 h-full lg:h-[400px] flex flex-col items-center justify-center text-primary-content">
+        <div className="  bg-gradient-to-tl from-[#010611] via-[#071C46] to-[#010611] p-10 h-full lg:h-[400px] flex flex-col items-center justify-center text-primary-content">
           <aside>
             <div className="flex items-center justify-center">
               <svg

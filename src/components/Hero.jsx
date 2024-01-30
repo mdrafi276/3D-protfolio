@@ -15,7 +15,6 @@ const Hero = () => {
 
   return (
     <section className={`relative contant w-full h-screen mx-auto`}>
-      
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -26,13 +25,11 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Rafi</span>
+            Hi, I'm <span className="text-[#00BFFF]">Rafi</span>
           </h1>
-          <div className="md:w-[335px]">
+          <div className="md:w-[340px]">
             {" "}
-            <p
-              className={`${styles.heroSubText}   mt-2 text-white-100`}
-            >
+            <p className={`${styles.heroSubText}   mt-2 font-semibold  h-one`}>
               {text} <br className="sm:block hidden" />
               {/* web applications */}
             </p>
@@ -60,7 +57,7 @@ const Hero = () => {
         </a>
       </div>
       <div className="absolute z-20 ml-8 md::ml-8 text-center  md:-mt-20 ">
-        <a href={resume} download="Rafi vaiyer Resume">
+        <a href={resume} download="Resume of Rafi">
           <button className="c-button  c-button--gooey  text-sm  rounded-2xl">
             {" "}
             Download Resume
