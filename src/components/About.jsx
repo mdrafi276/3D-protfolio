@@ -38,14 +38,14 @@ const ServiceCard = ({ index, title, icon }) => (
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()} className="mt-80 lg:mt-0">
+      <motion.div variants={textVariant()} className="mt-2 text-center md:text-start lg:mt-0">
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText} >Overview.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[17px] max-w-3xl text-center md:text-start leading-[30px]"
       >
         I'm a skilled Full-Stack web developer with experience in JavaScript, and
         expertise in frameworks like React, express.js, gsap, locomotivre.js,next.js,Material.UI,  Node.js. tailwind.css  I'm a quick learner and

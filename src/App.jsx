@@ -23,7 +23,9 @@ const App = () => {
 
         <div className="relative bg-[#010610] z-0">
           <Experience />
-          <Tech />
+          <div className="hidden md:block">
+            <Tech />
+          </div>
           <Works />
           <Feedbacks />
           <Contact />
