@@ -36,6 +36,7 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 // about
+// about
 const About = () => {
 
   return (
