@@ -35,7 +35,9 @@ const ServiceCard = ({ index, title, icon }) => (
   </Tilt>
 );
 
+// about
 const About = () => {
+
   return (
     <>
       <motion.div variants={textVariant()} className="mt-2 text-center md:text-start lg:mt-0">
